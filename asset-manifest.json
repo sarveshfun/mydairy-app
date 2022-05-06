@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mydiary-app/static/css/main.e2d47192.css",
-    "main.js": "/mydiary-app/static/js/main.8fbb56ce.js",
-    "static/js/787.2b9a0755.chunk.js": "/mydiary-app/static/js/787.2b9a0755.chunk.js",
-    "index.html": "/mydiary-app/index.html",
-    "main.e2d47192.css.map": "/mydiary-app/static/css/main.e2d47192.css.map",
-    "main.8fbb56ce.js.map": "/mydiary-app/static/js/main.8fbb56ce.js.map",
-    "787.2b9a0755.chunk.js.map": "/mydiary-app/static/js/787.2b9a0755.chunk.js.map"
+    "main.css": "/mydairy-app/static/css/main.e2d47192.css",
+    "main.js": "/mydairy-app/static/js/main.02c52b39.js",
+    "static/js/787.2b9a0755.chunk.js": "/mydairy-app/static/js/787.2b9a0755.chunk.js",
+    "index.html": "/mydairy-app/index.html",
+    "main.e2d47192.css.map": "/mydairy-app/static/css/main.e2d47192.css.map",
+    "main.02c52b39.js.map": "/mydairy-app/static/js/main.02c52b39.js.map",
+    "787.2b9a0755.chunk.js.map": "/mydairy-app/static/js/787.2b9a0755.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e2d47192.css",
-    "static/js/main.8fbb56ce.js"
+    "static/js/main.02c52b39.js"
   ]
 }
