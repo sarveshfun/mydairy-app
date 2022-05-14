@@ -4,9 +4,10 @@ import  Input from './component/searchbox/searchbox'
 import TextArea from './component/textarea/textarea';
 
 
-import  Search from   './component/Searchmap/Searchmap'
+
 
 import { useState} from "react"
+
 
 function App() {
 
@@ -34,16 +35,16 @@ const input = (event) =>{
   
 
   const value =  event.target.value;
-  console.log(value)
+  //console.log(value)
   SetValue(value)
 }
 
 
-const  OnSearch =(e)=> {
-  console.log('renderonsearch')
+const  OnSearch =(event)=> {
+  console.log(event)
   
   const filtersearch = Note.filter((item)=>{
-      return item.value.toLowerCase().includes(e.target.value)
+      return item.value.toLowerCase().includes(event.target.value)
     })
     
     setsearch(filtersearch)
@@ -65,36 +66,22 @@ const oldest =()=>{
 }
 
 
-const thisweek =()=>{
-
-  const newthisweek  = Note.sort(function(a,b){return new Date(b.date)- new Date(a.date)})
-    console.log(newthisweek)
-    setsearch([...newthisweek])
-    console.log(...newthisweek)
-}
-const thisyear =()=>{
-
-  const newthisyear  = Note.sort(function(a,b){return b.year- a.year})
-   // console.log(newthisweek)
-    setsearch([...newthisyear])
-}
 
 
-const ThisMonth =()=>{
 
-  const newthismonth  = Note.sort(function(a,b){return b.year- a.year})
-  console.log(Note)
-
-    setsearch([...newthismonth])
-}
 
 
 
 
 const add =() => {
+  if(!value){
+    alert('fill data')
+  }
+  else{
 
 
   if(control&& true){
+
     setcontrol(false)
     console.log("hi from")
    const obj3 ={...edit,...{value:value}}
@@ -127,7 +114,7 @@ const add =() => {
 
     
 
-  }
+    } }
 }
       
 
@@ -167,26 +154,38 @@ const Edit =(id)=>{
     return (
     <div className="App">
       <h1>my diary app</h1>
-      <Input className="search-box" changeHandler={(e)=>{OnSearch(e)}} placeholder="search-box"/>
+      <Input className="search-box" onchangeHandler={OnSearch} placeholder="search-box"/>
       <TextArea className = "text-area" onChangeHandler = {input} value={value} placeholder="type your notes"/>
     
       <button onClick={add}>add</button>
       <button onClick ={()=>{newest()}}>newwst</button>
-      <button onClick={()=>{ThisMonth()}}>thismonth</button>
+     
       <button onClick = {()=>{oldest()}}>oldest</button>
-      <button onChange ={()=>{thisweek()}}>thisweek</button>
-      <button onClick = {()=>{thisyear()}}>thisyear</button>
-       
-       <Search search = {search}  DeleteItem={Delete} editItem={Edit}/>
+      
     
-          <div>
+ 
+  
+       
+    
+      
 
           
          
-        
+          <div>
+         {search.map((item)=>{return(
+           <div className="list"key ={item.id}>
+             <p>{item.date.toJSON().slice(0,10).replace(/-/,'/')}</p>
+           <h1 >{item.value}</h1>
+           <button onClick={()=>{Delete(item.id)}} className="deletebutton">delete</button>
+           <button onClick={()=>{Edit(item.id)}} className= "editbutton">edit</button>
+           </div>)
+
+         
+         })}
+
 
         
-         </div>
+        
     
          </div>
         
@@ -195,7 +194,7 @@ const Edit =(id)=>{
          
       
 
-     
+     </div>
    
   );
 }

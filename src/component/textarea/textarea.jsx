@@ -8,6 +8,7 @@
 
 
 const TextArea = (props)=>{
+    //console.log(props)
     
 
     return(

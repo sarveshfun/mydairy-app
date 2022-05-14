@@ -22,3 +22,33 @@ code {
   margin: auto;
   margin-bottom: 20px;
 }
+
+
+.list{
+  
+  background-color: cornflowerblue;
+  width: 250px;
+  height: 200px;
+  border-radius: 15px;
+  
+  
+
+
+
+}
+
+.deletebutton{
+  background-color: aqua;
+  border-radius: 10px;
+  padding:5px;
+  margin: 4px;
+
+}
+
+
+.editbutton{
+  background-color: aqua;
+  border-radius: 10px;
+  padding: 5px;
+
+}

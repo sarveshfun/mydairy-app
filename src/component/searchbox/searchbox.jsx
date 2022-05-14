@@ -1,11 +1,12 @@
 const Input = (props) => {
+    
 
     
     return(
     
         <input 
         className={props.className}
-        onChange ={props.ChangeHandler}
+        onChange={props.onchangeHandler}
         placeholder={props.placeholder}
          >
         
